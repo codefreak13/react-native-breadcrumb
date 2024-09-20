@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {
   View,
-  ViewPropTypes,
   TouchableOpacity,
   StyleSheet,
   Text,
@@ -12,7 +11,7 @@ import PropTypes from 'prop-types';
 const HEIGHT = 23;
 const COLOR = '#e52b50';
 const TEXT_COLOR = 'black';
-const DISABLE_TEXT_COLOR = 'grey'
+const DISABLE_TEXT_COLOR = 'grey';
 
 const Crumb = ({ isCrumbActive, index, text, firstCrumbStyle, lastCrumbStyle, crumbStyle, activeCrumbStyle, crumbTextStyle, activeCrumbTextStyle,
   onCrumbPress, height, triangleHeadStyle, triangleTailStyle }) => {
@@ -104,13 +103,21 @@ Breadcrumb.propTypes = {
   isTouchable: PropTypes.bool.isRequired,
   onCrumbPress: PropTypes.func,
   spaceRatio: PropTypes.array,
-  crumbsContainerStyle: ViewPropTypes.style,
+  crumbsContainerStyle: PropTypes.object,  // Replaced ViewPropTypes.style with PropTypes.object
   borderRadius: PropTypes.number,
-  crumbStyle: ViewPropTypes.style,
-  activeCrumbStyle: ViewPropTypes.style,
+  crumbStyle: PropTypes.object,  // Replaced ViewPropTypes.style with PropTypes.object
+  activeCrumbStyle: PropTypes.object,  // Replaced ViewPropTypes.style with PropTypes.object
   crumbTextStyle: Text.propTypes.style,
   activeCrumbTextStyle: Text.propTypes.style,
   height: PropTypes.number
+};
+
+Breadcrumb.defaultProps = {
+  crumbsContainerStyle: {},  // Provide default values to avoid undefined errors
+  crumbStyle: {},
+  activeCrumbStyle: {},
+  crumbTextStyle: {},
+  activeCrumbTextStyle: {},
 };
 
 const styles = StyleSheet.create({
