@@ -102,7 +102,7 @@ Breadcrumb.propTypes = {
   flowDepth: PropTypes.number.isRequired,
   isTouchable: PropTypes.bool.isRequired,
   onCrumbPress: PropTypes.func,
-  spaceRatio: PropTypes.array,
+  spaceRatio: PropTypes.object,
   crumbsContainerStyle: PropTypes.object,  // Replaced ViewPropTypes.style with PropTypes.object
   borderRadius: PropTypes.number,
   crumbStyle: PropTypes.object,  // Replaced ViewPropTypes.style with PropTypes.object
